@@ -1,0 +1,18 @@
+* Very good tutorial:
+  -> https://www.atlassian.com/git/tutorials/setting-up-a-repository
+
+* clone Project:
+  -> git clone git@github.com:xChalix/AI.git
+
+* configure your name and email
+  -> git config user.name "Your Name"
+  -> git config user.email your@email.ac.uk
+
+* manage the stash
+  -> git status //shows all files which are selected for commit
+  -> git add file_or_directory //adds a file or directory to the stash
+  -> git add -A //adds EVERYTHING for the commit
+
+* make a commit
+
+

@@ -12,7 +12,31 @@
   -> git status //shows all files which are selected for commit
   -> git add file_or_directory //adds a file or directory to the stash
   -> git add -A //adds EVERYTHING for the commit
+  -> git reset //resets the added files, so you can add them again
 
 * make a commit
+  -> git commit    //commits the stasth
+  -> git commit -a //commits every CHANGED file
+  -> add the option -m "comment" for a quick commit.
+
+* view history:
+  -> git log --oneline -n [number] --decorate //en/dis able the optional commands for better results
+
+* view older commit:
+  -> git checkout 12345[first 5 letters of commit id] //type HEAD for going back
 
 
+* create branches
+  -> git branch [name] //does not checkout the branch
+  -> git checkout -b [name] //creates a new branch and checks it out
+  -> git branch -r // shows all local (without -r) and remote (with -r) branches
+
+* merge
+  -> git merge [branch] //merges branch into the current branch
+
+* SYNCING
+  -> git fetch //downloads the latest changes
+  -> git merge origin/master //make sure, you are in your local master branch when doing this.
+
+  -> git pull --rebase //same as above, --rebase gets rid of unnecessary merges.
+  -> git push <branch> //upload your changes, branch is optional

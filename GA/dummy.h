@@ -7,7 +7,7 @@ using namespace std;
 
 #include "VC.h"
 
-class Dummy : VC
+class Dummy : public VC
 {
 public:
     Dummy(int ID=0);

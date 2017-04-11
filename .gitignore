@@ -31,3 +31,8 @@
 # QT Files
 *.pro
 *.pro.user
+*.autosave
+
+#Build Directories
+build-GA-Desktop-Debug/*
+

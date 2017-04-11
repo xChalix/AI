@@ -11,10 +11,10 @@ public:
     virtual void mutate()=0;
     virtual VC copy()=0;
 
-    bool operator> (const VC &c1, const VC &c2);  //Overloading the comparisson operators. Compare according to fitness value
-    bool operator>= (const VC &c1, const VC &c2);
-    bool operator< (const VC &c1, const VC &c2);
-    bool operator<= (const VC &c1, const VC &c2);
+    bool operator> (const VC &c);  //Overloading the comparisson operators. Compare according to fitness value
+    bool operator>= (const VC &c);
+    bool operator< (const VC &c);
+    bool operator<= (const VC &c);
 };
 
 #endif // VC_H

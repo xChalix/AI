@@ -3,6 +3,8 @@
 #include "dummy.h"
 #include "GA.h"
 
+using namespace std;
+
 int main(int argc, char *argv[])
 {
     Dummy *population[10];

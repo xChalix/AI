@@ -10,6 +10,11 @@ public:
     bool valid_fitness;         //Checks if the fitness value already has been used for selection. Set to false after selection, and only start the selection when it is true.
     virtual void mutate()=0;
     virtual VC copy()=0;
+
+    bool operator> (const VC &c1, const VC &c2);  //Overloading the comparisson operators. Compare according to fitness value
+    bool operator>= (const VC &c1, const VC &c2);
+    bool operator< (const VC &c1, const VC &c2);
+    bool operator<= (const VC &c1, const VC &c2);
 };
 
 #endif // VC_H

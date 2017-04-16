@@ -8,7 +8,7 @@ GA::GA()
 
 void GA::reproduction(VC *population[], int size) { //Tristan is currently working on this!!
 
-//	sort(population,size); // sort population to push blank arrays towards the bottom of the array (size -1)
+    sort_population(population,size); // sort population to push blank arrays towards the bottom of the array (size -1)
 
 	int offset = 0;
 	bool flag_offset = true;
@@ -54,12 +54,17 @@ void GA::reproduction(VC *population[], int size) { //Tristan is currently worki
 */
 void GA::selection(VC *population[], int size)
 {
+    //at the moment: cuts off the lower half of the population.
 	
-//	sort(population,size);
+    sort_population(population,size);
+
+    int offset = size/2;
+    if (offset==0) offset=1; //ensures that at least 1 object is kept.
 	
-	for( int i = 0; i < size; i++ )
+    for( int i = offset; i < size; i++ )
 	{
-		
+        delete population[i];
+        population[i]=0;
 	}
 	
 }

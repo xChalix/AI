@@ -22,6 +22,15 @@ bool VC::operator<= (const VC &c) {
     return fitness <= c.fitness;
 }
 
+bool VC::operator== (const VC &c) {
+    return fitness == c.fitness;
+}
+
+bool VC::operator!= (const VC &c) {
+    return fitness != c.fitness;
+}
+
+
 VC::~VC() {
 
 }

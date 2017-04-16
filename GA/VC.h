@@ -16,6 +16,9 @@ public:
     bool operator>= (const VC &c);
     bool operator< (const VC &c);
     bool operator<= (const VC &c);
+    bool operator== (const VC &c);
+    bool operator!= (const VC &c);
+
 };
 
 #endif // VC_H

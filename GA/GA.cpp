@@ -7,6 +7,8 @@ GA::GA()
 
 
 void GA::reproduction(VC *population[], int size) { //Tristan is currently working on this!!
+    //at the moment: clones and mutates the best Creature onto the first empty space, then the second best Creature onto the second empty space, and so on
+    //until all empty spaces are filled.
 
     sort_population(population,size); // sort population to push blank arrays towards the bottom of the array (size -1)
 
@@ -14,7 +16,7 @@ void GA::reproduction(VC *population[], int size) { //Tristan is currently worki
 	bool flag_offset = true;
 	int empty = 0;
 
-	for( int i = 0; i < size; i = i + 1) { //determines number of empty array values and offset
+    for( int i = 0; i < size; i++) { //determines number of empty array values and offset
         if (population[i] == 0) {
 			empty = empty + 1;
 			if ( flag_offset ) {
@@ -24,24 +26,19 @@ void GA::reproduction(VC *population[], int size) { //Tristan is currently worki
 		}
 	}
 
-	//note: population[n].fitness for getting fitness value
+    //note: population[n]->fitness for getting fitness value
 	//note: assuming that fitness is sorted from highest to lowest	
 
-	for( int i = 0; i < size; i = i + 1) {
+    int i=0;//iterates through all valid objects, starting with the fittest
+    for (int e=offset; e<size; e++) { //iterate through the empty places
+        population[e] = population[i]->copy();
+        population[e]->mutate();
+        i++;
+        if (i==offset) //if i reached the end, start again with the fittest object.
+            i=0;
+    }
 
-		
 
-
-		if ( empty > 0 ) {
-			//copy(population[i], i + offset);
-			population[i+offset] = population[i]->copy();
-			//mutate(population[i + offset]);
-			population[i+offset]->mutate();
-			empty = empty - 1;
-		} else {
-			break;
-		}
-	}
 }
 
 /*

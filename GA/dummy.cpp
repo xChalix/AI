@@ -6,7 +6,7 @@ Dummy::Dummy(int ID) : ID(ID)
 }
 
 void Dummy::print() {
-    cout << "Creature: "<<ID<<" Fitness: "<<fitness<<"\n";
+    cout << "Creature: "<<ID<<" Weight: "<<weight<<" Fitness: "<<fitness<<"\n";
 }
 
 void Dummy::mutate() {

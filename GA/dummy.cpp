@@ -19,4 +19,8 @@ VC* Dummy::copy() {
     return c;
 }
 
-
+VC * Dummy::mate(VC *partner) {
+    Dummy *c = new Dummy(ID);
+    c->weight=weight;
+    return c;
+}

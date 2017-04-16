@@ -16,6 +16,7 @@ public:
 
     void mutate();
     VC* copy();
+    VC* mate(VC *partner);
 
 };
 

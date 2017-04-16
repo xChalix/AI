@@ -13,6 +13,10 @@ public:
     Dummy(int ID=0);
     int ID;
     void print();
+
+    void mutate();
+    VC* copy();
+
 };
 
 #endif // DUMMY_H

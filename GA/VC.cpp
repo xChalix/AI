@@ -7,7 +7,7 @@ VC::VC()
 
 
 bool VC::operator> (const VC &c) {
-    return fitness > c2.fitness;
+    return fitness > c.fitness;
 }
 
 bool VC::operator>= (const VC &c) {
@@ -20,4 +20,8 @@ bool VC::operator< (const VC &c) {
 
 bool VC::operator<= (const VC &c) {
     return fitness <= c.fitness;
+}
+
+VC::~VC() {
+
 }

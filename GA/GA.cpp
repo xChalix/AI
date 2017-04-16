@@ -10,6 +10,13 @@ void GA::reproduction(VC *population[], int size) { //Tristan is currently worki
     //at the moment: clones and mutates the best Creature onto the first empty space, then the second best Creature onto the second empty space, and so on
     //until all empty spaces are filled.
 
+
+    //check if all fitness values are valid, before proceeding:
+    for (int i=0; i<size; i++) {
+        if (population[i]!=0 && population[i]->valid_fitness==false) return;
+    }
+
+
     sort_population(population,size); // sort population to push blank arrays towards the bottom of the array (size -1)
 
 	int offset = 0;
@@ -33,6 +40,7 @@ void GA::reproduction(VC *population[], int size) { //Tristan is currently worki
     for (int e=offset; e<size; e++) { //iterate through the empty places
         population[e] = population[i]->copy();
         population[e]->mutate();
+        population[e]->valid_fitness=false;
         i++;
         if (i==offset) //if i reached the end, start again with the fittest object.
             i=0;
@@ -52,7 +60,13 @@ void GA::reproduction(VC *population[], int size) { //Tristan is currently worki
 void GA::selection(VC *population[], int size)
 {
     //at the moment: cuts off the lower half of the population.
-	
+
+    //check if all fitness values are valid, before proceeding:
+    for (int i=0; i<size; i++) {
+        if (population[i]!=0 && population[i]->valid_fitness==false) return;
+    }
+
+
     sort_population(population,size);
 
     int offset = size/2;

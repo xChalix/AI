@@ -7,7 +7,7 @@ class VC //Virtual Creature
 public:
     VC();
     double fitness;             //Fitness function of the VC, must be positive! //TODO pls check in the GA every time, if the fitness IS positive. If it negative, set it to 0
-    bool valid_fitness;         //Checks if the fitness value already has been used for selection. Set to false after selection, and only start the selection when it is true.
+    bool valid_fitness;         //Checks if the fitness value is valid. If a mutation happened or a new VC is created, but not tested yet, this value is false;
     virtual void mutate()=0;
     virtual VC *copy()=0;
     virtual ~VC();

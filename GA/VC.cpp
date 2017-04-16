@@ -2,6 +2,8 @@
 
 VC::VC()
 {
+    fitness=0;
+    valid_fitness=false;
 
 }
 

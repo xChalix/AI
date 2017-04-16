@@ -80,6 +80,7 @@ void test_GA_selection() {
         population[i]=0;
         population[i] = new Dummy(i+1);
         population[i]->fitness=i;
+        population[i]->valid_fitness=true;
     }
     delete population[9];
     delete population[4];
@@ -114,6 +115,7 @@ void test_GA_reproduction() {
         population[i]=0;
         population[i] = new Dummy(i+1);
         population[i]->fitness=i;
+        population[i]->valid_fitness=true;
     }
     delete population[9];
     delete population[4];

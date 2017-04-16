@@ -15,7 +15,6 @@ void Dummy::mutate() {
 
 VC* Dummy::copy() {
     Dummy *c = new Dummy(ID);
-    c->fitness=fitness;
     c->weight=weight;
     return c;
 }

@@ -11,7 +11,7 @@ class Dummy : public VC
 {
 public:
     Dummy(int ID=0);
-    int ID;
+    int ID, weight;
     void print();
 
     void mutate();

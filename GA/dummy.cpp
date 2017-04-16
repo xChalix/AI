@@ -2,7 +2,7 @@
 
 Dummy::Dummy(int ID) : ID(ID)
 {
-
+    weight=0;
 }
 
 void Dummy::print() {
@@ -10,11 +10,14 @@ void Dummy::print() {
 }
 
 void Dummy::mutate() {
-
+    weight+=1;
 }
 
 VC* Dummy::copy() {
-    return 0;
+    Dummy *c = new Dummy(ID);
+    c->fitness=fitness;
+    c->weight=weight;
+    return c;
 }
 
 
